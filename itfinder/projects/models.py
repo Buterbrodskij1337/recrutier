@@ -3,7 +3,7 @@ import uuid
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=100)
     slug = models.SlugField()
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -11,11 +11,14 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+
 class Project(models.Model):
-    objects = None
     title = models.CharField(max_length=100)
     slug = models.SlugField()
     description = models.TextField(null=True, blank=True)
+    tags = models.ManyToManyField(Tag, blank=True)
+    total_votes = models.IntegerField(default=0, null=True, blank=True)
+    votes_ratio = models.IntegerField(default=0, null=True, blank=True)
     demo_link = models.CharField(max_length=500, null=True, blank=True)
     source_link = models.CharField(max_length=500, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
