@@ -13,6 +13,7 @@ class Tag(models.Model):
 
 
 class Project(models.Model):
+    objects = None
     title = models.CharField(max_length=100)
     slug = models.SlugField()
     description = models.TextField(null=True, blank=True)
