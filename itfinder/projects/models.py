@@ -3,12 +3,12 @@ from users.models import Profile
 import uuid
 from django.utils.text import slugify
 
-
 class Tag(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField()
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
 
     def save(self, *args, **kwargs):
         value = self.name
@@ -16,7 +16,7 @@ class Tag(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.name
+        return self.name    
 
 
 class Project(models.Model):
@@ -73,3 +73,6 @@ class Review(models.Model):
 
     def __str__(self):
         return self.value
+
+
+

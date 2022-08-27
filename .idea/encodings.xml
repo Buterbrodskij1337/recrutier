@@ -6,6 +6,8 @@
     <file url="file://$PROJECT_DIR$/itfinder/media" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/itfinder/media/media" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/itfinder/projects/forms.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/itfinder/projects/models.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/itfinder/projects/views.py" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

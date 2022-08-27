@@ -2,7 +2,6 @@ from django.forms import ModelForm
 from django import forms
 from .models import Project, Review
 
-
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
@@ -10,11 +9,11 @@ class ProjectForm(ModelForm):
         labels = {
             'title': 'Название проекта',
             'slug': 'Слаг',
-            'image': 'Скриншот проекта',
-            'tags': 'Теги',
-            'description': 'Описание проекта',
-            'demo_link': 'Демо-версия',
-            'source_link': 'Исходный код на GitHub'
+            'image':'Скриншот проекта',
+            'tags':'Теги', 
+            'description':'Описание проекта',
+            'demo_link':'Демо-версия',
+            'source_link':'Исходный код на GitHub'
         }
 
         widgets = {
@@ -25,8 +24,7 @@ class ProjectForm(ModelForm):
         super(ProjectForm, self).__init__(*args, **kwargs)
 
         for name, field in self.fields.items():
-            field.widget.attrs.update({'class': 'input'})
-
+            field.widget.attrs.update({'class': 'input'})    
 
 class ReviewForm(ModelForm):
     class Meta:
@@ -42,4 +40,4 @@ class ReviewForm(ModelForm):
         super(ReviewForm, self).__init__(*args, **kwargs)
 
         for name, field in self.fields.items():
-            field.widget.attrs.update({'class': 'input'})
+            field.widget.attrs.update({'class': 'input'})            
